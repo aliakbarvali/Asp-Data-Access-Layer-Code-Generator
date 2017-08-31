@@ -57,38 +57,69 @@ nam	nvarchar(200)	Checked
 isActive	bit	Checked
 
 
+
 1 - StoredProcedure
 
 
-
 PROCEDURE dbo.spv_tbCat_Insert
+
 PROCEDURE dbo.spv_tbCat_Delete_byPK
+
 PROCEDURE dbo.spv_tbCat_Delete_byPK_AndDecColGreateThan
+
 PROCEDURE dbo.spv_tbCat_Delete_byPK_AndIncColLowerThan
+
 PROCEDURE dbo.spv_tbCat_Update_byPK
+
 PROCEDURE dbo.spv_tbCat_UpdateIfNotNull_byPK
+
 PROCEDURE dbo.spv_tbCat_selectLastID
+
 PROCEDURE dbo.spv_tbCat_select_All
+
 PROCEDURE dbo.spv_tbCat_select_All_WithJoin
+
 PROCEDURE dbo.spv_tbCat_selectTop_All
+
 PROCEDURE dbo.spv_tbCat_selectTop_All_WithJoin
+
 PROCEDURE dbo.spv_tbCat_select_Between2Index
+
 PROCEDURE dbo.spv_tbCat_select_Between2Index_WithJoin
+
 PROCEDURE dbo.spv_tbCat_select_Search
+
 PROCEDURE dbo.spv_tbCat_select_Search_WithJoin
+
 PROCEDURE dbo.spv_tbCat_select_ByPageNumber
+
 PROCEDURE dbo.spv_tbCat_select_ByPageNumber_WithJoin
+
 PROCEDURE dbo.spv_tbCat_select_ByPKPre
+
 PROCEDURE dbo.spv_tbCat_select_ByPK
+
 PROCEDURE dbo.spv_tbCat_select_ByPK_WithJoin
+
 PROCEDURE dbo.spv_tbCat_select_ByPKNext
+
 PROCEDURE dbo.spv_tbCat_selectLast
+
 PROCEDURE dbo.spv_tbCat_selectLast_WithJoin
+
 PROCEDURE dbo.spv_tbCat_select_ByColumn
+
 PROCEDURE dbo.spv_tbCat_select_ByColumn_WithJoin
+
 PROCEDURE dbo.spv_tbCat_Update_Increase_byPK
+
 PROCEDURE dbo.spv_tbCat_Update_Decrease_byPK
+
 PROCEDURE dbo.spv_tbCat_UpdateOrInsert_byPK
+
 PROCEDURE dbo.spv_tbCat_select_RowCount
+
+
+
 
 
