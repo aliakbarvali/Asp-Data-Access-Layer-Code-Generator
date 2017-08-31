@@ -7,6 +7,6 @@ List of Generated File:
 
   2.1 DA  (Folder): This folder contains basic model classes with 'TableName'+'DA' File Name and 'TableName' + 'DA' partial class name. Every class contains base property and methods
   
-  2.2 DA  (Folder): This folder contains model classes with 'TableName'+'DAP' File Name and 'TableName' + 'DA' partial class name. Every class contains property display name and server side required attribiute
+  2.2 DAP  (Folder): This folder contains model classes with 'TableName'+'DAP' File Name and 'TableName' + 'DA' partial class name. Every class contains property display name and server side required attribiute
   
-  2.3 DA  (Folder): This folder contains model classes with 'TableName'+'DAP_Methods' File Name and 'TableName' + 'DA' partial class name. Every class contains sample CUID Query and methods for new custom methods.
+  2.3 DAP_Methods  (Folder): This folder contains model classes with 'TableName'+'DAP_Methods' File Name and 'TableName' + 'DA' partial class name. Every class contains sample CUID Query and methods for new custom methods.
