@@ -12,20 +12,39 @@ List of Generated File:
   2.3 DAP_Methods  (Folder): This folder contains model classes with 'TableName'+'DAP_Methods' File Name and 'TableName' + 'DA' partial class name. Every class contains sample CUID Query and methods for new custom methods.
 
 Foreach property of class (or column of table) the "DisplayName" and other Required Attribute gots from Properties of Column.
+
 for example:
+
 the "DisplayName" attribute gets from Description of column and if description was empty it gots from column name.
+
 and Required attribute gots from "AllowNull" of column
+
 and MaxLen attribute gots from Len of column properties
 
 To add more features, Some tags have been added to the description section.
+
 for example:
+
 If you want to use a separate and direct method to change the bit value of a specific field from the table based on the primary key, just use the -change- tag. Like this
+
 in Description Section: use name that you like then add '#' the add tag name (-change-)
+
 => "Name of Category#-change-"
-If you want to use a direct method to register the value of a field based on the primary key, you can use the -set-tag
-If you want to consider a field as the external key to the users table and validate it (access) based on it, you can use the -auth-tag.
-You can also use the - and - tags for fields. These are fields to determine the type of record performance.
-If you use the tags-and-you-and-used Stored Applications, you'll be able to view all the fields correctly as the administrator. But if you send the wrong value, you can only view or edit the fields that have the correct field value.
+
+If you want to use a direct method to update the value of a specific field based on the primary key, you can use the -set- tag
+=> "Name of Category#-set-"
+
+If you want to consider a field as the foreign key to the users table and validate it (access) based on it, you can use the -auth- tag.
+
+=> "Name of Category#-auth-"
+
+-set- and -auth- together
+
+=> "Name of Category#-auth--set-"
+
+You can also use the -isvisible- and -iseditable- tags for fields. These are fields to determine the type of record access.
+
+If you used the tags -isvisible- and -iseditable- and use 'True' as IsAdmin value for Stored Applications, you'll be able to view or edit all the fields with True of Flase value. But if you send the False value, you can only view or edit the fields that have the True field value.
 
 Sample Database Table With Generated Stored Procedure and Class:
 
@@ -44,24 +63,20 @@ IF ( OBJECT_ID('dbo.spv_tbCat_Insert') IS NOT NULL )
 GO
 CREATE PROCEDURE dbo.spv_tbCat_Insert  
 	 @nam     nvarchar      (200)  = NULL
-		,@isActive     bit       = 1
-		         
+	 ,@isActive     bit       = 1   
 AS 
 BEGIN 
   SET NOCOUNT OFF 
-
-	declare @IdentityOutput table ( ID int )
-  INSERT INTO [dbo].[tbCat]
-  ( 
-	  [nam] 
-			,[isActive] 
-			         
-  ) 
+  declare @IdentityOutput table ( ID int )
+  INSERT INTO [dbo].[tbCat]( 
+	 [nam] 
+	 ,[isActive] 			         
+) 
   output inserted.id into @IdentityOutput(ID)
   VALUES 
   ( 
-			@nam  
-			,@isActive  
+	@nam  
+	,@isActive  
 			          
   ) 
 	select ID from @IdentityOutput		
