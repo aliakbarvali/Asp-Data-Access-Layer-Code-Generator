@@ -121,6 +121,188 @@ PROCEDURE dbo.spv_tbCat_UpdateOrInsert_byPK
 PROCEDURE dbo.spv_tbCat_select_RowCount
 
 
+2- Data Access Class : name is "tbCatDA"
 
+		[ScaffoldColumn(false)] 
+		[Display(AutoGenerateField = false)]
+		[HiddenInput(DisplayValue = false)]
+		[Range(0, int.MaxValue, ErrorMessage = "لطفاً عدد مناسب وارد نمایید")]
+		public int  id; 
+		[DisplayName("عنوان دسته خبری")]
+		[Display(Name = "عنوان دسته خبری")]
+		[StringLength(200, ErrorMessage="طول داده حداکثر 200 می باشد")]
+		public string  nam;
+		[DisplayName("آیا فعال است")]
+		[Display(Name = "آیا فعال است")]
+		public bool?   isActive;
+
+
+
+		private SqlDataReader selectAll( bool isAdmin = false  , bool isJoin = false)
+	
+
+		private SqlDataReader selectAll(string ColumnName, object ColumnValue, bool isAdmin = false  , bool isJoin = false)
+		
+
+		private DataTable select(string SqlCommandText)
+	
+
+		private List<tbCatDA> ReadAllRows(SqlDataReader drc , bool IsJoin = false)
+	
+
+		private tbCatDA ReadOneRow(SqlDataReader drc)
+		
+
+		private List<tbCatDA> selectInternal(object id_value  , bool isAdmin = false  , bool isJoin = false)
+		
+
+		public List<tbCatDA> select(bool isAdmin = false  , bool isJoin = false)
+		
+
+		public tbCatDA selectByPK(object id_value  , bool isAdmin = false , bool isJoin = false )
+		
+
+		public string selectByPKPre(object id_value  , bool isAdmin = false , bool isJoin = false )
+		
+
+		public string selectByPKNext(object id_value  , bool isAdmin = false , bool isJoin = false )
+		
+
+		public tbCatDA selectLast(bool isJoin = false)
+		
+
+		public List<tbCatDA> selectByIndex(int StartIndex , int EndIndex , bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectSearchByIndex(int StartIndex , int EndIndex , object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectSearchByPageNumber(int pagenumber,  int pageSize = 50, bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> select(string ColumnName , object id, bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectTop(int topCount = 0, bool isJoin = false, bool isAdmin = false )
+		
+
+		public List<tbCatDA> selectbyOrder(string ColumnName, bool Asc = true , int topCount = 0, bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectLike(string fieldName , string value, bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectLike(string ParentFieldName , string ParentFieldValue , string fieldName , string value, bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectNotLike(string fieldName , string value, bool isAdmin = false , bool isJoin = false)
+		
+
+		public List<tbCatDA> selectwhere(string whereQuery , bool isJoin = false)
+		
+
+		public object selectOneValue(String AggFunction,String ColumnName)
+		
+
+		public ReturnedData Insert()
+		
+
+		public ReturnedData Insert1_PropertyAll(object  nam_value ,object  isActive_value )
+		
+
+
+		public SqlCommand InsertCommand1_PropertyAll(object  nam_value ,object  isActive_value )
+		
+
+		public SqlCommand InsertCommand2_Command( string SqlCommandText, params object[] args)
+		
+
+		public void openConnectionForMultipleCommand()
+		
+
+		public void closeConnectionForMultipleCommand()
+		
+
+		public ReturnedData Update(bool isAdmin = false )
+		
+
+		public ReturnedData Update1_Property_All(object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false )
+		
+
+		public ReturnedData UpdateIfNotNull(bool isAdmin = false )
+		
+
+		public ReturnedData Update1_Property_AllIfNotNull(object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false )
+		
+
+		public ReturnedData UpdateOrInsert( bool isAdmin = false )
+		
+
+		public ReturnedData UpdateOrInsert_Property_All(object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false )
+		
+
+		public ReturnedData Update2_PropertyValue_OneByPK(object id_value , string ColumnName , object value, bool isAdmin = false )
+		
+
+		public SqlCommand UpdateCommand2_CommandValues(string SqlCommandText, bool isAdmin = false , params object[] args)
+		
+
+		public ReturnedData Update3_Set_ColVal1_where_ColVal2(string ColumnName1 ,Object Value1 , string ColumnName2 , Object Value2, bool isAdmin = false )
+		
+
+		public ReturnedData Update4_CommandValues(string SqlCommandText,bool isAdmin = false  , params object[] args)
+		
+
+		public ReturnedData Update5_PropertyValue_PropertyValue_ByPK(object id_value , string ColumnName1 , object value1, string ColumnName2 , object value2, bool isAdmin = false )
+		
+
+		public SqlCommand UpdateCommand1_PropertyValueAll(object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false )
+		
+
+		public SqlCommand UpdateCommand1_PropertyValueAllIfNotNull(object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false )
+		
+
+		public SqlCommand UpdateOrInsert_PropertyValueAll(object  id_value ,object  nam_value ,object  isActive_value , bool isAdmin = false )
+	
+
+		public SqlCommand UpdateCommand3_PropertyValue_OneByPK(object id_value , string ColumnName , object value, bool isAdmin = false )
+		
+
+		public SqlCommand UpdateCommand4_PropertyValue_PropertyValue_ByPK(object id_value , string ColumnName1 , object value1, string ColumnName2 , object value2, bool isAdmin = false )
+		
+
+		public ReturnedData Increase(object id_value , string ColumnName , int count , bool isAdmin = false )
+	
+
+		public ReturnedData decrease(object id_value , string ColumnName , int count, bool isAdmin = false )
+	
+	
+		public ReturnedData Delete1_Property_PK_AndIncColLowerThan(string ColName , int ColValue , object id_value )
+		
+
+		public ReturnedData Delete1_Property_PK_AndDecColGreateThan(string ColName , int ColValue , object id_value )
+	
+
+		public ReturnedData Delete1_Property_PK(object id_value , bool isAdmin = false )
+		
+
+		public ReturnedData Delete_All()
+		
+
+		public ReturnedData Delete_Where_Col_Value(string ColumnName , object value, bool isAdmin = false )
+	
+
+		public ReturnedData Delete2_Command(string SqlCommandText, bool isAdmin = false  , params object[] args)
+		
+
+		public int getLastIdentifyKey()
+		
+
+		public string GetTableName()
+
+		public static long selectRowCount()
+		
+
+        private ReturnedData EcexuteUpdateQuery(SqlCommand Command)
 
 
