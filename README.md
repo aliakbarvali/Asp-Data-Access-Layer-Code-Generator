@@ -1,5 +1,6 @@
 # Asp-Data-Access-Layer-Code-Generator
-this is not reposity, but it could help you to auto generate Data access layer form database. it could be powerfull tools to auto generate Storedprocedure and classes
+this is not reposity, but it could help you to auto generate Data access layer form database. it could be powerfull tools to auto generate Storedprocedure and classes.
+
 List of Generated File:
 1. StoredProcedure.sql
 
@@ -44,7 +45,7 @@ If you want to consider a field as the foreign key to the users table and valida
 
 You can also use the -isvisible- and -iseditable- tags for fields. These are fields to determine the type of record access.
 
-If you used the tags -isvisible- and -iseditable- and use 'True' as IsAdmin value for Stored Applications, you'll be able to view or edit all the fields with True of Flase value. But if you send the False value, you can only view or edit the fields that have the True field value.
+If you used the tags -isvisible- and -iseditable- and use 'True' as IsAdmin value for StoredProcedure, you'll be able to view or edit all the fields with True or Flase value. But if you send the False value, you can only view or edit the fields that have the True field value.
 
 Sample Database Table With Generated Stored Procedure and Class:
 
